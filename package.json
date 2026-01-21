@@ -1,0 +1,25 @@
+{
+  "name": "orange_pos_web",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000o\u0000r\u0000a\u0000n\u0000g\u0000e\u0000-\u0000p\u0000o\u0000s\u0000-\u0000w\u0000e\u0000b\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AchuthanDev/orange-pos-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AchuthanDev/orange-pos-web/issues"
+  },
+  "homepage": "https://github.com/AchuthanDev/orange-pos-web#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
