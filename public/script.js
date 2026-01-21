@@ -1,10 +1,24 @@
 (function () {
   const html = document.documentElement;
 
-  // ===== THEME =====
+  // ---------- THEME ----------
   const btn = document.getElementById("themeToggle");
   const icon = document.getElementById("themeIcon");
   const text = document.getElementById("themeText");
+
+  function setTheme(theme) {
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    updateThemeUI();
+  }
+
+  function updateThemeUI() {
+    if (!icon || !text) return;
+    const current = html.getAttribute("data-theme") || "light";
+    const isDark = current === "dark";
+    icon.textContent = isDark ? "🌞" : "🌙";
+    text.textContent = isDark ? "Light" : "Dark";
+  }
 
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark" || savedTheme === "light") {
@@ -12,71 +26,50 @@
   } else {
     html.setAttribute("data-theme", "light");
   }
-
-  function updateThemeUI() {
-    if (!btn || !icon || !text) return;
-    const current = html.getAttribute("data-theme") || "light";
-    const isDark = current === "dark";
-    icon.textContent = isDark ? "🌞" : "🌙";
-    text.textContent = isDark ? "Light" : "Dark";
-  }
   updateThemeUI();
 
   if (btn) {
     btn.addEventListener("click", () => {
       const current = html.getAttribute("data-theme") || "light";
-      const next = current === "light" ? "dark" : "light";
-      html.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-      updateThemeUI();
+      setTheme(current === "light" ? "dark" : "light");
     });
   }
 
-  // ===== ACTIVE NAV LINK =====
-  const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-  document.querySelectorAll(".menu a, .drawer a").forEach(a => {
+  // ---------- ACTIVE NAV ----------
+  const currentFile = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  document.querySelectorAll("[data-nav]").forEach((a) => {
     const href = (a.getAttribute("href") || "").toLowerCase();
-    if (href === path) a.classList.add("active");
+    if (href === currentFile) a.classList.add("active");
   });
 
-  // ===== MOBILE MENU =====
-  const burger = document.getElementById("burger");
-  const drawer = document.getElementById("drawer");
-  if (burger && drawer) {
-    burger.addEventListener("click", () => {
-      const hidden = drawer.hasAttribute("hidden");
-      if (hidden) drawer.removeAttribute("hidden");
-      else drawer.setAttribute("hidden", "");
+  // ---------- MOBILE MENU ----------
+  const mobBtn = document.getElementById("mobBtn");
+  const mobPanel = document.getElementById("mobPanel");
+
+  if (mobBtn && mobPanel) {
+    mobBtn.addEventListener("click", () => {
+      mobPanel.classList.toggle("show");
+      mobBtn.textContent = mobPanel.classList.contains("show") ? "✕" : "☰";
     });
   }
 
-  // ===== CONTACT FORM SUBMIT =====
-  const contactForm = document.getElementById("contactForm");
-  const contactMsg = document.getElementById("contactMsg");
+  // ---------- FOOTER YEAR ----------
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
 
-  if (contactForm) {
+  // ---------- CONTACT FORM (frontend demo) ----------
+  const contactForm = document.getElementById("contactForm");
+  const contactStatus = document.getElementById("contactStatus");
+
+  if (contactForm && contactStatus) {
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      if (contactMsg) contactMsg.textContent = "Sending...";
 
-      const formData = new FormData(contactForm);
-      const payload = Object.fromEntries(formData.entries());
-
-      try {
-        const res = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        const data = await res.json();
-        if (!res.ok) throw new Error(data?.message || "Failed");
-
-        if (contactMsg) contactMsg.textContent = "✅ Message sent successfully!";
-        contactForm.reset();
-      } catch (err) {
-        if (contactMsg) contactMsg.textContent = "❌ Failed to send. Try again.";
-      }
+      // Later we will POST to Node: /api/contact
+      // For now, just show success UI
+      contactStatus.textContent = "✅ Message prepared! Next step: connect Node API (/api/contact).";
+      contactStatus.style.opacity = "1";
+      contactForm.reset();
     });
   }
 })();

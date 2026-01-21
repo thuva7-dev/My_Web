@@ -3,80 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support | Orange POS</title>
+  <title>Orange POS - Support</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html"><span class="brand-dot"></span>Orange POS</a>
 
-      <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="support.html">Support</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-dot"></span> Orange POS</a>
 
-      <div class="nav-actions">
-        <button class="burger" id="burger" type="button"><span>☰</span></button>
-        <button id="themeToggle" class="theme-btn" type="button">
-          <span id="themeIcon" class="theme-icon">🌙</span>
-          <span id="themeText" class="theme-text">Dark</span>
-        </button>
+    <nav class="menu">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="products.html">Products</a>
+      <a data-nav href="solutions.html">Solutions</a>
+      <a data-nav href="support.html">Support</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-tools">
+      <button id="themeToggle" class="theme-btn" type="button">
+        <span id="themeIcon" class="theme-icon">🌙</span>
+        <span id="themeText" class="theme-text">Dark</span>
+      </button>
+      <button id="mobBtn" class="mob-btn" type="button">☰</button>
+    </div>
+  </div>
+
+  <div id="mobPanel" class="container mob-panel">
+    <a data-nav href="index.html">Home</a>
+    <a data-nav href="products.html">Products</a>
+    <a data-nav href="solutions.html">Solutions</a>
+    <a data-nav href="support.html">Support</a>
+    <a data-nav href="about.html">About</a>
+    <a data-nav href="contact.html">Contact</a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding-bottom:10px;">
+    <div>
+      <div class="kicker"><span class="dot"></span> Support</div>
+      <h1 class="h1" style="font-size:clamp(28px,4vw,44px);">Downloads & help</h1>
+      <p class="lead">Drivers, manuals, setup guides (placeholders now).</p>
+      <div class="actions">
+        <a class="btn primary" href="contact.html">Get Help</a>
+        <a class="btn ghost" href="products.html">Find Product</a>
       </div>
     </div>
 
-    <div class="container drawer" id="drawer" hidden>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="solutions.html">Solutions</a>
-      <a href="support.html">Support</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <div class="card hero-card">
+      <div class="chip">Quick help</div>
+      <p class="p" style="margin-top:10px;">If your printer/scanner not working, check USB, driver, and port.</p>
     </div>
-  </header>
+  </section>
 
-  <main class="container">
-    <section class="page-head">
-      <h1>Support & Downloads</h1>
-      <p>Quick help, setup guides and downloads (sample placeholders).</p>
-    </section>
-
-    <section class="section">
-      <div class="grid">
-        <div class="card item">
-          <span class="tag">Guide</span>
-          <h3>How to Setup POS</h3>
-          <p>Connect printer, scanner, and cash drawer. Configure your POS app.</p>
-          <a class="link" href="contact.html">Need help? →</a>
-        </div>
-        <div class="card item">
-          <span class="tag">Download</span>
-          <h3>Drivers (Sample)</h3>
-          <p>Printer driver, scanner driver, and tools for Windows.</p>
-          <a class="link" href="#">Download →</a>
-        </div>
-        <div class="card item">
-          <span class="tag">FAQ</span>
-          <h3>Common Issues</h3>
-          <p>Printing issues, USB detection, paper cutting, power issues.</p>
-          <a class="link" href="#">Read FAQ →</a>
-        </div>
+  <section class="section">
+    <div class="grid-3">
+      <div class="card item">
+        <div class="chip">Manual</div>
+        <h3 class="h3" style="margin-top:10px;">User Guide (PDF)</h3>
+        <p class="p">Add your pdf later into /public/assets/.</p>
+        <a class="link" href="#">Download →</a>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Orange POS</p>
-      <p class="muted">Support</p>
+      <div class="card item">
+        <div class="chip">Driver</div>
+        <h3 class="h3" style="margin-top:10px;">Printer Driver</h3>
+        <p class="p">Add link later (or serve from Node).</p>
+        <a class="link" href="#">Download →</a>
+      </div>
+      <div class="card item">
+        <div class="chip">FAQ</div>
+        <h3 class="h3" style="margin-top:10px;">Common Questions</h3>
+        <p class="p">Power, network, print issues and fixes.</p>
+        <a class="link" href="contact.html">Ask support →</a>
+      </div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script src="script.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <b>Orange POS</b>
+      <div class="small-muted">© <span id="year"></span> All rights reserved.</div>
+    </div>
+    <div class="small-muted">Support • Manuals • Drivers</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

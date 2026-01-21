@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orange POS - Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-dot"></span> Orange POS</a>
+
+    <nav class="menu">
+      <a data-nav href="index.html">Home</a>
+      <a data-nav href="products.html">Products</a>
+      <a data-nav href="solutions.html">Solutions</a>
+      <a data-nav href="support.html">Support</a>
+      <a data-nav href="about.html">About</a>
+      <a data-nav href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-tools">
+      <button id="themeToggle" class="theme-btn" type="button">
+        <span id="themeIcon" class="theme-icon">🌙</span>
+        <span id="themeText" class="theme-text">Dark</span>
+      </button>
+      <button id="mobBtn" class="mob-btn" type="button">☰</button>
+    </div>
+  </div>
+
+  <div id="mobPanel" class="container mob-panel">
+    <a data-nav href="index.html">Home</a>
+    <a data-nav href="products.html">Products</a>
+    <a data-nav href="solutions.html">Solutions</a>
+    <a data-nav href="support.html">Support</a>
+    <a data-nav href="about.html">About</a>
+    <a data-nav href="contact.html">Contact</a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding-bottom:10px;">
+    <div>
+      <div class="kicker"><span class="dot"></span> Contact</div>
+      <h1 class="h1" style="font-size:clamp(28px,4vw,44px);">Get a quote / ask availability</h1>
+      <p class="lead">Send your requirements: Windows, i7, RAM, SSD + accessories.</p>
+    </div>
+
+    <div class="card hero-card">
+      <div class="chip">Fast checklist</div>
+      <p class="p" style="margin-top:10px;">
+        ✅ POS model • ✅ OS • ✅ CPU/RAM/SSD • ✅ Cash drawer • ✅ Scanner • ✅ Printer
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <form id="contactForm" class="card form">
+        <h2 class="h2" style="font-size:22px;">Send message</h2>
+
+        <label>Your name</label>
+        <input required placeholder="Achuu" />
+
+        <label>Email or WhatsApp</label>
+        <input required placeholder="+94..." />
+
+        <label>What do you need?</label>
+        <select>
+          <option>POS Machine</option>
+          <option>Cash Drawer</option>
+          <option>Barcode Scanner</option>
+          <option>Thermal Printer</option>
+          <option>Full Set (POS + all accessories)</option>
+        </select>
+
+        <label>Message</label>
+        <textarea required placeholder="I need Windows version, i7, 8GB RAM, 256GB SSD. Also provide cash drawer, scanner, thermal printer..."></textarea>
+
+        <button class="btn primary" style="margin-top:14px;" type="submit">Submit</button>
+        <div id="contactStatus" class="note"></div>
+      </form>
+
+      <div class="card item">
+        <div class="chip">Sales</div>
+        <h3 class="h3" style="margin-top:10px;">Orange POS Sales Team</h3>
+        <p class="p">We’ll reply with price, lead time, and accessory compatibility.</p>
+
+        <hr class="sep" />
+
+        <div class="chip">Office hours</div>
+        <p class="p" style="margin-top:10px;">Mon–Sat • 9:00 AM – 6:00 PM</p>
+
+        <div style="margin-top:14px;">
+          <a class="btn ghost" href="support.html">Support page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <b>Orange POS</b>
+      <div class="small-muted">© <span id="year"></span> All rights reserved.</div>
+    </div>
+    <div class="small-muted">Contact • Quote • Support</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
