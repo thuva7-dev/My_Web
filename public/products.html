@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Orange POS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>Orange POS</a>
+
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="burger" id="burger" type="button"><span>☰</span></button>
+        <button id="themeToggle" class="theme-btn" type="button">
+          <span id="themeIcon" class="theme-icon">🌙</span>
+          <span id="themeText" class="theme-text">Dark</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container drawer" id="drawer" hidden>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Products</h1>
+      <p>POS terminals and accessories: cash drawer, scanner, thermal printers and more.</p>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card item">
+          <span class="tag">Featured</span>
+          <h3>TC-TOUCH-A10</h3>
+          <p>15.6” Touch POS • Windows • i7 • 8GB • 256GB SSD</p>
+          <a class="btn primary small" href="product.html?id=tc-touch-a10">View</a>
+        </article>
+
+        <article class="card item">
+          <span class="tag">POS Terminal</span>
+          <h3>Orange POS Pro 15</h3>
+          <p>All-in-one terminal for retail & food shops</p>
+          <a class="btn primary small" href="product.html?id=pos-pro-15">View</a>
+        </article>
+
+        <article class="card item">
+          <span class="tag">Compact</span>
+          <h3>Mini POS S10</h3>
+          <p>Small counter POS — clean design, stable performance</p>
+          <a class="btn primary small" href="product.html?id=mini-pos-s10">View</a>
+        </article>
+
+        <article class="card item">
+          <span class="tag">Accessory</span>
+          <h3>Cash Drawer</h3>
+          <p>Metal body, smooth open, multiple compartments</p>
+          <a class="btn ghost small" href="contact.html">Ask Price</a>
+        </article>
+
+        <article class="card item">
+          <span class="tag">Accessory</span>
+          <h3>Barcode Scanner</h3>
+          <p>Fast scan, USB plug & play, 1D/2D options</p>
+          <a class="btn ghost small" href="contact.html">Ask Price</a>
+        </article>
+
+        <article class="card item">
+          <span class="tag">Accessory</span>
+          <h3>Thermal Printer</h3>
+          <p>Clear receipt, high speed, low noise</p>
+          <a class="btn ghost small" href="contact.html">Ask Price</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Orange POS</p>
+      <p class="muted">Products • POS • Accessories</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

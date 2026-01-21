@@ -1,15 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <title>Node Server Test</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orange POS | Smart POS Devices</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>Orange POS</a>
 
-  <h1>My HTML + CSS + JS Project</h1>
-  <button onclick="getData()">Call API</button>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="burger" id="burger" type="button" aria-label="Open menu"><span>☰</span></button>
+        <button id="themeToggle" class="theme-btn" type="button">
+          <span id="themeIcon" class="theme-icon">🌙</span>
+          <span id="themeText" class="theme-text">Dark</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container drawer" id="drawer" hidden>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="kicker">🚀 Built for <b>Retail</b> • <b>Restaurants</b> • <b>Supermarkets</b></div>
+        <h1>Modern POS Devices & Accessories for Small Business</h1>
+        <p>
+          Orange POS brings reliable POS terminals, barcode scanners, cash drawers and thermal printers —
+          with strong after-sales support and easy integration.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="contact.html">Get a Quote</a>
+          <a class="btn ghost" href="products.html">Explore Products</a>
+        </div>
+
+        <div class="grid">
+          <div class="card item">
+            <span class="tag">Fast Billing</span>
+            <h3>Quick & Smooth</h3>
+            <p>Touch optimized UI, fast boot, stable performance for daily billing.</p>
+            <a class="link" href="solutions.html">See solutions →</a>
+          </div>
+          <div class="card item">
+            <span class="tag">Accessories</span>
+            <h3>Full Setup</h3>
+            <p>Cash drawer, scanner, thermal printer — complete set for your shop.</p>
+            <a class="link" href="products.html">Browse accessories →</a>
+          </div>
+          <div class="card item">
+            <span class="tag">Support</span>
+            <h3>Help Anytime</h3>
+            <p>Guides, downloads, setup tips, and direct support for your team.</p>
+            <a class="link" href="support.html">Go to support →</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card hero-panel">
+        <span class="badge">Featured</span>
+        <h3>TC-TOUCH-A10</h3>
+        <p>15.6” Touch POS • Windows • i7 • 8GB RAM • 256GB SSD</p>
+
+        <div class="specs">
+          <div class="spec"><span>OS</span>Windows</div>
+          <div class="spec"><span>CPU</span>Core i7</div>
+          <div class="spec"><span>RAM</span>8GB</div>
+          <div class="spec"><span>SSD</span>256GB</div>
+        </div>
+
+        <div class="hero-actions" style="margin-top:14px;">
+          <a class="btn primary small" href="product.html?id=tc-touch-a10">View Details</a>
+          <a class="btn ghost small" href="contact.html">Contact Sales</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Popular Products</h2>
+          <p class="section-sub">Professional POS machines and accessories for your business.</p>
+        </div>
+        <a class="btn ghost" href="products.html">View All</a>
+      </div>
+
+      <div class="grid">
+        <article class="card item">
+          <span class="tag">POS Terminal</span>
+          <h3>All-in-One POS</h3>
+          <p>Touch display, strong performance, clean look for counters.</p>
+          <a class="link" href="products.html">Shop now →</a>
+        </article>
+
+        <article class="card item">
+          <span class="tag">Thermal Printer</span>
+          <h3>Receipt Printing</h3>
+          <p>Clear prints, high speed, low maintenance for daily use.</p>
+          <a class="link" href="products.html">Shop now →</a>
+        </article>
+
+        <article class="card item">
+          <span class="tag">Barcode Scanner</span>
+          <h3>Fast Scanning</h3>
+          <p>USB plug & play, quick scan, supports 1D/2D options.</p>
+          <a class="link" href="products.html">Shop now →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Solutions</h2>
+          <p class="section-sub">Choose a setup based on your business type.</p>
+        </div>
+        <a class="btn ghost" href="solutions.html">Explore</a>
+      </div>
+
+      <div class="grid">
+        <div class="card item">
+          <span class="tag">Retail</span>
+          <h3>Mini Mart & Stores</h3>
+          <p>Barcode, inventory, fast checkout with receipt printing.</p>
+        </div>
+        <div class="card item">
+          <span class="tag">Food</span>
+          <h3>Restaurant & Café</h3>
+          <p>Quick billing, table orders, kitchen print support.</p>
+        </div>
+        <div class="card item">
+          <span class="tag">Services</span>
+          <h3>Pharmacy & More</h3>
+          <p>Simple UI, stable performance, full accessory support.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Orange POS</p>
+      <p class="muted">Light/Dark Theme • HTML/CSS/JS • Node.js</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

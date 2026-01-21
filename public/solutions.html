@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions — Orange POS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>Orange POS</a>
+
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-btn" type="button">
+          <span id="themeIcon" class="theme-icon">🌙</span>
+          <span id="themeText" class="theme-text">Dark</span>
+        </button>
+        <button id="hamburger" class="hamburger" type="button" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+
+    <div id="mobilePanel" class="mobile-panel">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="pagehead">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> Solutions</div>
+    <h1>Solutions</h1>
+    <p class="lead">Choose a POS setup based on your business type.</p>
+  </div>
+
+  <section class="section">
+    <div class="grid-3">
+      <div class="card feature">
+        <div class="icon">🛒</div>
+        <h3>Retail</h3>
+        <p>Fast checkout, inventory friendly, barcode scanning and receipts.</p>
+        <hr class="sep" />
+        <div class="small">Recommended: Touch POS + Scanner + Printer</div>
+      </div>
+
+      <div class="card feature">
+        <div class="icon">🍔</div>
+        <h3>Restaurant</h3>
+        <p>Quick billing, kitchen printing, table order workflow.</p>
+        <hr class="sep" />
+        <div class="small">Recommended: POS + Thermal Printer</div>
+      </div>
+
+      <div class="card feature">
+        <div class="icon">🏪</div>
+        <h3>Supermarket</h3>
+        <p>High-volume billing, barcode scanning, cash drawer support.</p>
+        <hr class="sep" />
+        <div class="small">Recommended: POS + Scanner + Cash Drawer</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid-2">
+      <div class="card p-22">
+        <h2 style="margin:0 0 10px;">Integration Ready</h2>
+        <p class="lead" style="margin:0;">
+          We can integrate POS with your software (billing, stock, reports).
+        </p>
+      </div>
+
+      <div class="card p-22">
+        <h2 style="margin:0 0 10px;">Need Help Choosing?</h2>
+        <p class="lead" style="margin:0 0 14px;">
+          Send us your requirements. We’ll suggest best model.
+        </p>
+        <a class="btn primary" href="contact.html">Contact Sales</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <b>Orange POS</b>
+      <div class="small">Solutions for businesses</div>
+    </div>
+    <div class="small">© <span id="year"></span> Orange POS</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html><!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions | Orange POS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>Orange POS</a>
+
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="burger" id="burger" type="button"><span>☰</span></button>
+        <button id="themeToggle" class="theme-btn" type="button">
+          <span id="themeIcon" class="theme-icon">🌙</span>
+          <span id="themeText" class="theme-text">Dark</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container drawer" id="drawer" hidden>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Solutions</h1>
+      <p>POS setups designed for different business types.</p>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card item">
+          <span class="tag">Retail</span>
+          <h3>Mini Mart & Stores</h3>
+          <p>Fast checkout + barcode scan + receipt print + accessories bundle.</p>
+          <a class="link" href="contact.html">Get solution quote →</a>
+        </div>
+
+        <div class="card item">
+          <span class="tag">Food</span>
+          <h3>Restaurant & Café</h3>
+          <p>Quick billing, kitchen printing support, stable counter terminal.</p>
+          <a class="link" href="contact.html">Get solution quote →</a>
+        </div>
+
+        <div class="card item">
+          <span class="tag">Pharmacy</span>
+          <h3>Pharmacy</h3>
+          <p>Reliable device with scanner + printing for invoice and labels.</p>
+          <a class="link" href="contact.html">Get solution quote →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Orange POS</p>
+      <p class="muted">Solutions</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | Orange POS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="brand-dot"></span>Orange POS</a>
+
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="burger" id="burger" type="button"><span>☰</span></button>
+        <button id="themeToggle" class="theme-btn" type="button">
+          <span id="themeIcon" class="theme-icon">🌙</span>
+          <span id="themeText" class="theme-text">Dark</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container drawer" id="drawer" hidden>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1 id="pName">Loading...</h1>
+      <p id="pTag">Please wait</p>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card item">
+          <span class="tag">Overview</span>
+          <p id="pDesc" class="note"></p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+            <a class="btn primary" href="contact.html">Get Quote</a>
+            <a class="btn ghost" href="products.html">Back</a>
+          </div>
+        </div>
+
+        <div class="card item">
+          <span class="tag">Specs</span>
+          <div class="specs" style="margin-top:10px;">
+            <div class="spec"><span>OS</span><span id="pOS"></span></div>
+            <div class="spec"><span>CPU</span><span id="pCPU"></span></div>
+            <div class="spec"><span>RAM</span><span id="pRAM"></span></div>
+            <div class="spec"><span>Storage</span><span id="pSSD"></span></div>
+          </div>
+        </div>
+
+        <div class="card item">
+          <span class="tag">Accessories</span>
+          <h3>Complete your setup</h3>
+          <p>Cash drawer • Barcode scanner • Thermal printer</p>
+          <a class="link" href="contact.html">Ask bundle price →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Orange POS</p>
+      <p class="muted">Product Details</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id") || "tc-touch-a10";
+
+    async function loadProduct() {
+      const res = await fetch("/api/products/" + encodeURIComponent(id));
+      const data = await res.json();
+      if (!data.ok) {
+        document.getElementById("pName").textContent = "Product not found";
+        document.getElementById("pTag").textContent = "Check the link and try again.";
+        return;
+      }
+      const p = data.product;
+      document.getElementById("pName").textContent = p.name;
+      document.getElementById("pTag").textContent = p.tagline;
+      document.getElementById("pDesc").textContent = p.desc;
+      document.getElementById("pOS").textContent = p.os;
+      document.getElementById("pCPU").textContent = p.cpu;
+      document.getElementById("pRAM").textContent = p.ram;
+      document.getElementById("pSSD").textContent = p.storage;
+    }
+    loadProduct();
+  </script>
+</body>
+</html>
